@@ -154,8 +154,8 @@ if (typeof callf === 'function') { callf({ active: function(id){
 pos: function (pos = 'left'){  initSidebar_pos(setup_slidef_objrc, pos);  },
 theme: function (theme = 'light'){  initSidebar_theme(setup_slidef_objrc, theme);  },
 btn_open: btn_copene.style,
-close: function(){ initSidebar_close(setup_slidef_objrc, option.close); }, 
-open: function(){ initSidebar_open(setup_slidef_objrc, option.open); }, 
+close: function(){ initSidebar_close(setup_slidef_objrc); }, 
+open: function(){ initSidebar_open(setup_slidef_objrc); }, 
 obj: navItens  }); } 
 initSidebar_open(setup_slidef_objrc, option.open); }; 
 }
