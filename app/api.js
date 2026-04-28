@@ -96,7 +96,7 @@ sidebar_obj.innerHTML=sidebar_obj.innerHTML+"<style>  "+id+" { opacity:1 !import
 
 
 
-function initSidebar_creater(btn="this", id="this", list=[], title="", icon="", theme = 'light', typ="left", callf, option={ btn_close:true, btn: "Open SidebarFS", icon:"" }){ 
+function initSidebar_creater(btn="this", id="this", list=[], title="", icon="", theme = 'light', typ="left", callf, option={ run:false, btn_close:true, btn: "Open SidebarFS", icon:"" }){ 
 var setup_slide_style="left";  var setup_slidef_logo="";   
 if(typ=="right"){ setup_slide_style="right"; } 
 if(typ=="center"){ setup_slide_style="center"; }
@@ -142,9 +142,7 @@ if(option.btn && option.btn!=""){   initSidedbar_crayteg.innerHTML = initSidedba
 if(document.getElementsByTagName("body")[0]){  document.getElementsByTagName("body")[0].appendChild(initSidedbar_crayteg);  }
 return document.getElementById(aa[1]);   }, function(aa){  return document.getElementById(aa[2]);  }, { [1]:initSidebar_gnerbrnt, [2]:btn });
 
-  
 initSidebar(setup_slidef_objrc, list, theme); 
-
   
 if(btn_copene){ 
 btn_copene.onclick = function(){ 
@@ -154,8 +152,8 @@ if (typeof callf === 'function') { callf({ active: function(id){
 pos: function (pos = 'left'){  initSidebar_pos(setup_slidef_objrc, pos);  },
 theme: function (theme = 'light'){  initSidebar_theme(setup_slidef_objrc, theme);  },
 btn_open: btn_copene.style,
-close: function(){ initSidebar_close(setup_slidef_objrc); }, 
-open: function(){ initSidebar_open(setup_slidef_objrc); }, 
+close: function(){ initSidebar_close(setup_slidef_objrc, option.close); }, 
+open: function(){ initSidebar_open(setup_slidef_objrc, option.open); }, 
 obj: navItens  }); } 
 initSidebar_open(setup_slidef_objrc, option.open); }; 
 }
@@ -164,6 +162,7 @@ const btn_close = setup_slidef_objrc.getElementsByClassName('sidebar-close')[0];
 if(btn_close){ btn_close.onclick = function(){ initSidebar_close(setup_slidef_objrc, option.close); }; }
 if(overlay){ overlay.onclick = function(){ initSidebar_close(setup_slidef_objrc, option.close); }; }
 
+if (option.run && option.run===true){   initSidebar_open(setup_slidef_objrc, option.open);  } 
 
 } } 
 }
