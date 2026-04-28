@@ -8,7 +8,25 @@
   <link rel="icon" href="https://fcasfs-of.cloud-fs.net/TECH-SideBar/app.png" type="image/png"/>
 
   <script>
-  
+  function initSidebar_onload(api){       if(api){
+
+api("this", "this", [
+   { label: 'Page Not Found', desc: '<br/> The page you\'re looking for doesn\'t exist or has been removed. <br/><br/> ', icon: null, onClick: null }
+ ], "404", '', 
+'dark', 'fullscreen', function(api){
+
+   if(api){
+     //api.active(0);
+
+	   api.open();
+      }
+    }, { btn:"", icon:"',
+  btn_close:false
+});
+
+
+}   }
+
   </script>
 
 <style>
