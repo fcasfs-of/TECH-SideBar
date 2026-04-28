@@ -51,8 +51,7 @@
   function initSidebar_onload(api){       if(api){
 
 api("this", "this", [
-   { label: 'English', desc: '<br/> Transform your website\'s browsing experience with our Sidebar Navigation web application, a fully customizable and intuitive solution. <br/> Supporting light and dark themes, you can adjust the look to perfectly match your brand identity. <br/> Furthermore, we offer multiple placement options: left sidebar, right sidebar, center, or full screen, ensuring flexibility for different layouts and needs. <br/> Easily configurable and compatible with various projects, our Sidebar is the ideal tool for creating modern, functional interfaces with a touch of personalization. <br/> ', icon: null, onClick: null },
-   { label: '<button class="fbutton" id="btn_ptbr">Portugues</button>', desc: '', icon: null, onClick: null }
+   { label: '<button class="fbutton" id="btn_ptbr">Portugues</button> <br/><br/> <button class="fbutton" id="btn_en">English</button>', desc: '', icon: null, onClick: null }
  ], "Sidebar Navigation", '', 
 'light', 'fullscreen', function(apiz){
 
@@ -65,7 +64,19 @@ api("btn_ptbr", "this", [
      //apid.active(0);
 	   
       }
-    }, { run:true, btn:"", icon:''
+    }, { btn:"", icon:''
+});
+
+api("btn_en", "this", [
+   { label: 'Transform your website\'s browsing experience with our Sidebar Navigation web application, a fully customizable and intuitive solution. <br/> Supporting light and dark themes, you can adjust the look to perfectly match your brand identity. <br/> Furthermore, we offer multiple placement options: left sidebar, right sidebar, center, or full screen, ensuring flexibility for different layouts and needs. <br/> Easily configurable and compatible with various projects, our Sidebar is the ideal tool for creating modern, functional interfaces with a touch of personalization.', desc: '', icon: null, onClick: null }
+ ], "Sidebar - English", '', 
+'dark', 'center', function(apid){
+
+   if(apid){
+     //apid.active(0);
+	   
+      }
+    }, { btn:"", icon:''
 });
 
 
