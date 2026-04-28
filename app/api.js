@@ -112,7 +112,7 @@ sidebar_obj.innerHTML=sidebar_obj.innerHTML+"<style>  "+id+" { opacity:1 !import
 }    }
 
 
-function initSidebar_acc(){   if(document.querySelectorAll('.acc-item')){
+function initSidebar_acc(){   
 document.querySelectorAll('.acc-item').forEach(el => {
   const summary = el.querySelector('summary');
   const wrapper = el.querySelector('.content-wrapper');
@@ -139,8 +139,7 @@ document.querySelectorAll('.acc-item').forEach(el => {
 	}
   };
 });
-
-}  }
+} 
 
 
 function initSidebar_creater(btn="this", id="this", list=[], title="", icon="", theme = 'light', typ="left", callf, option={ run:false, btn_close:true, btn: "Open SidebarFS", icon:"" }){ 
