@@ -32,6 +32,24 @@ if (typeof cl === 'function') {  cl();  }
 }  }  
 
 
+function initSidebar_accAdd(id, iye) {  if(iye && id && id!=""){ 
+const mainVidime = document.getElementById(id); 
+if(mainVidime){
+
+var liestrood="";   var liestrddfood="";
+   for(var j=0; j<iye.length; j++){
+
+if(iye[j].txt && iye[j].txt!="" && iye[j].name && iye[j].name!=""){ 
+liestrood=liestrood+'<details class="acc-item">    <summary>      <span>'+iye[j].name+'</span>         <span class="acc-icon">▼</span>    </summary>    <div class="content-wrapper">     <div class="content-body">'+iye[j].txt+'</div>    </div>  </details>';
+}
+   }
+
+mainVidime.innerHTML=liestrood;
+
+}  }
+}
+
+
 function initSidebar(sidebar_obj, menuData=[], theme = 'light', ott) {
 if(sidebar_obj){ 
 const sidebar = sidebar_obj.getElementsByClassName('sidebar')[0]; 
@@ -176,6 +194,7 @@ initSidebar(setup_slidef_objrc, list, theme, option.close);
 if (typeof callf === 'function') { callf({ active: function(id){ 
  if(id){   initSidebar_oac(config_pp, setup_slide_style_cog+" .iten"+(Number(id)+1)+"");   } 
 }, 
+acc: initSidebar_accAdd,
 pos: function (pos = 'left'){  initSidebar_pos(setup_slidef_objrc, pos);  },
 theme: function (theme = 'light'){  initSidebar_theme(setup_slidef_objrc, theme);  },
 btn_open: btn_copene.style,
