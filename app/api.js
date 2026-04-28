@@ -142,7 +142,10 @@ if(option.btn && option.btn!=""){   initSidedbar_crayteg.innerHTML = initSidedba
 if(document.getElementsByTagName("body")[0]){  document.getElementsByTagName("body")[0].appendChild(initSidedbar_crayteg);  }
 return document.getElementById(aa[1]);   }, function(aa){  return document.getElementById(aa[2]);  }, { [1]:initSidebar_gnerbrnt, [2]:btn });
 
+  
+initSidebar(setup_slidef_objrc, list, theme); 
 
+  
 if(btn_copene){ 
 btn_copene.onclick = function(){ 
 if (typeof callf === 'function') { callf({ active: function(id){ 
@@ -161,8 +164,6 @@ const btn_close = setup_slidef_objrc.getElementsByClassName('sidebar-close')[0];
 if(btn_close){ btn_close.onclick = function(){ initSidebar_close(setup_slidef_objrc, option.close); }; }
 if(overlay){ overlay.onclick = function(){ initSidebar_close(setup_slidef_objrc, option.close); }; }
 
-
-initSidebar(setup_slidef_objrc, list, theme); 
 
 } } 
 }
