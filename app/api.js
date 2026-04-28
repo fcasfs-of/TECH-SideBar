@@ -3,6 +3,9 @@ initSidebar_stg.innerHTML='      :root {      --transition-speed: 0.4s;      --t
 if(document.getElementsByTagName("head")[0]){  document.getElementsByTagName("head")[0].appendChild(initSidebar_stg);  }
 
 
+const autoClose = true;
+
+
 function initSidebar_start(){
 
 function gerarIDSimples(tamanho = 8) {  return Math.random().toString(36).substring(2, 2 + tamanho);   }
