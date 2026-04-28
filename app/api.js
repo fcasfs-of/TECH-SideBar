@@ -32,7 +32,7 @@ if (typeof cl === 'function') {  cl();  }
 }  }  
 
 
-function initSidebar(sidebar_obj, menuData=[], theme = 'light') {
+function initSidebar(sidebar_obj, menuData=[], theme = 'light', ott) {
 if(sidebar_obj){ 
 const sidebar = sidebar_obj.getElementsByClassName('sidebar')[0]; 
 const nav = sidebar_obj.getElementsByClassName('sidebar-nav')[0];
@@ -47,7 +47,7 @@ const div = document.createElement('div');
 idex_itenf=idex_itenf+1;
 div.className = `nav-item ${idex_itenf} iten${canClick ? 'is-clickable' : 'not-clickable'}`; 
 div.innerHTML = ` ${item.icon ? `<div class="item-icon">${item.icon}</div>` : ''} <div class="item-content"> <span class="item-title">${item.label}</span> ${item.desc ? `<span class="item-desc">${item.desc}</span>` : ''} </div> `; 
-if (canClick && div) { div.addEventListener('click', () => { item.onClick(); initSidebar_close(sidebar_obj); }); } 
+if (canClick && div) { div.addEventListener('click', () => { item.onClick(); initSidebar_close(sidebar_obj, ott); }); } 
 nav.appendChild(div); }); 
 } } 
 }
@@ -142,10 +142,8 @@ if(option.btn && option.btn!=""){   initSidedbar_crayteg.innerHTML = initSidedba
 if(document.getElementsByTagName("body")[0]){  document.getElementsByTagName("body")[0].appendChild(initSidedbar_crayteg);  }
 return document.getElementById(aa[1]);   }, function(aa){  return document.getElementById(aa[2]);  }, { [1]:initSidebar_gnerbrnt, [2]:btn });
 
-initSidebar(setup_slidef_objrc, list, theme); 
-  
-if(btn_copene){ 
-btn_copene.onclick = function(){ 
+initSidebar(setup_slidef_objrc, list, theme, option.close); 
+
 if (typeof callf === 'function') { callf({ active: function(id){ 
  if(id){   initSidebar_oac(config_pp, setup_slide_style_cog+" .iten"+(Number(id)+1)+"");   } 
 }, 
@@ -154,7 +152,10 @@ theme: function (theme = 'light'){  initSidebar_theme(setup_slidef_objrc, theme)
 btn_open: btn_copene.style,
 close: function(){ initSidebar_close(setup_slidef_objrc, option.close); }, 
 open: function(){ initSidebar_open(setup_slidef_objrc, option.open); }, 
-obj: navItens  }); } 
+obj: navItens  });  } 
+  
+if(btn_copene){ 
+btn_copene.onclick = function(){ 
 initSidebar_open(setup_slidef_objrc, option.open); }; 
 }
 
