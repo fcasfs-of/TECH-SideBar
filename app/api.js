@@ -3,8 +3,6 @@ initSidebar_stg.innerHTML='      :root {      --transition-speed: 0.4s;      --t
 if(document.getElementsByTagName("head")[0]){  document.getElementsByTagName("head")[0].appendChild(initSidebar_stg);  }
 
 
-const autoClose = true;
-
 
 function initSidebar_start(){
 
@@ -114,6 +112,8 @@ if(sidebar_obj && id && id!=""){
 sidebar_obj.innerHTML=sidebar_obj.innerHTML+"<style>  "+id+" { opacity:1 !important;  pointerevents:auto !important;   } </style>";
 }    }
 
+
+const autoClose = true;
 
 function initSidebar_acc(){   
 document.querySelectorAll('.acc-item').forEach(el => {
