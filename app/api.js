@@ -94,6 +94,35 @@ sidebar_obj.innerHTML=sidebar_obj.innerHTML+"<style>  "+id+" { opacity:1 !import
 }    }
 
 
+function initSidebar_acc(){   if(document.querySelectorAll('.acc-item')){
+document.querySelectorAll('.acc-item').forEach(el => {
+  const summary = el.querySelector('summary');
+  const wrapper = el.querySelector('.content-wrapper');
+
+  summary.onclick = (e) => {
+    e.preventDefault();
+    const isOpen = el.classList.contains('is-open');
+
+	if (isOpen) {
+	  el.classList.remove('is-open');
+	  wrapper.style.height = '0px';
+	  setTimeout(() => el.open = false, 310);
+	} else {
+	  if (autoClose) {
+		document.querySelectorAll('.acc-item.is-open').forEach(openItem => {
+		  openItem.classList.remove('is-open');
+		  openItem.querySelector('.content-wrapper').style.height = '0px';
+		  setTimeout(() => openItem.open = false, 310);
+		});
+	  }
+	  el.open = true;
+      el.classList.add('is-open');
+      wrapper.style.height = wrapper.querySelector('.content-body').scrollHeight + 'px';
+	}
+  };
+});
+
+}  }
 
 
 function initSidebar_creater(btn="this", id="this", list=[], title="", icon="", theme = 'light', typ="left", callf, option={ run:false, btn_close:true, btn: "Open SidebarFS", icon:"" }){ 
@@ -153,7 +182,9 @@ btn_open: btn_copene.style,
 close: function(){ initSidebar_close(setup_slidef_objrc, option.close); }, 
 open: function(){ initSidebar_open(setup_slidef_objrc, option.open); }, 
 obj: navItens  });  } 
-  
+
+initSidebar_acc();
+
 if(btn_copene){ 
 btn_copene.onclick = function(){ 
 initSidebar_open(setup_slidef_objrc, option.open); }; 
