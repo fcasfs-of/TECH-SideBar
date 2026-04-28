@@ -32,7 +32,7 @@ if (typeof cl === 'function') {  cl();  }
 }  }  
 
 
-function initSidebar_accAdd(id, iye) {  if(iye && id && id!=""){ 
+function initSidebar_accAdd(id="", iye=[]) {  if(iye && id && id!=""){ 
 const mainVidime = document.getElementById(id); 
 if(mainVidime){
 
@@ -194,15 +194,13 @@ initSidebar(setup_slidef_objrc, list, theme, option.close);
 if (typeof callf === 'function') { callf({ active: function(id){ 
  if(id){   initSidebar_oac(config_pp, setup_slide_style_cog+" .iten"+(Number(id)+1)+"");   } 
 }, 
-acc: initSidebar_accAdd,
+acc: function (id, list){  initSidebar_accAdd(id, list);  initSidebar_acc();  },
 pos: function (pos = 'left'){  initSidebar_pos(setup_slidef_objrc, pos);  },
 theme: function (theme = 'light'){  initSidebar_theme(setup_slidef_objrc, theme);  },
 btn_open: btn_copene.style,
 close: function(){ initSidebar_close(setup_slidef_objrc, option.close); }, 
 open: function(){ initSidebar_open(setup_slidef_objrc, option.open); }, 
 obj: navItens  });  } 
-
-initSidebar_acc();
 
 if(btn_copene){ 
 btn_copene.onclick = function(){ 
