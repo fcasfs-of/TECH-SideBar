@@ -204,7 +204,7 @@ initSidebar(setup_slidef_objrc, list, theme, option.close);
 
 function fs_loaded_app_calls(){
 if (typeof callf === 'function') { callf({ active: function(id){ 
- if(id){ 	var fs_loaded_app_calls_iff=""+Number(id)+1;
+ if(id){ 	var fs_loaded_app_calls_iff=""+Number(id);
 	if(Number(scheck_stringno_valtext(id, "1"))==1 || Number(id)<=0){  fs_loaded_app_calls_iff="1";  }
   initSidebar_oac(config_pp, setup_slide_style_cog+".item"+fs_loaded_app_calls_iff+"");   } 
 }, 
