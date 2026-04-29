@@ -111,8 +111,9 @@ sidebar.classList.add('fullscreen'); }
 
 function initSidebar_oac(sidebar_obj, id){ 
 if(sidebar_obj && id && id!=""){ 
-	//if(document.querySelector(id)){   document.querySelector(id).classList.remove("not-clickable");    }
-sidebar_obj.innerHTML=sidebar_obj.innerHTML+"<style>  "+id+" { opacity:1 !important;  pointer-events:auto !important;   } </style>";
+var initSideiteg = document.createElement("style");
+initSideiteg.innerHTML=""+id+" { opacity:1 !important;  pointer-events:auto !important;   }";
+	sidebar_obj.appendChild(initSideiteg);
 }    }
 
 
