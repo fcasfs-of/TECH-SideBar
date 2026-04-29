@@ -51,7 +51,7 @@
   function initSidebar_onload(api){       if(api){
 
 api("this", "this", [
-   { label: '<button class="fbutton" id="btn_ptbr">Portugues</button> <br/><br/> <button class="fbutton" id="btn_en">English</button>', desc: '', icon: null, onClick: function(){  } }
+   { label: '<button class="fbutton" id="btn_ptbr">Portugues</button> <br/><br/> <button class="fbutton" id="btn_en">English</button>', desc: '', icon: null, onClick: null }
  ], "Sidebar Navigation", '', 
 'light', 'fullscreen', function(apiz){
 
@@ -81,7 +81,7 @@ api("btn_en", "this", [
 
 
    if(apiz){
-     apiz.active(0);
+     apiz.active(1);
 	   
       }
     }, { run:true, btn:"", icon:'',
