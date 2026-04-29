@@ -204,7 +204,7 @@ initSidebar(setup_slidef_objrc, list, theme, option.close);
 function fs_loaded_app_calls(){
 if (typeof callf === 'function') { callf({ active: function(id){ 
  if(id){ 	var fs_loaded_app_calls_iff=""+Number(id)+1;
-	if(Number(scheck_stringno_valtext(id, "1"))<=0 || Number(id)<=0){  fs_loaded_app_calls_iff="1";  }
+	if(scheck_stringno_valtext(id, "0"))==="0" || Number(id)<=0){  fs_loaded_app_calls_iff="1";  }
   initSidebar_oac(config_pp, setup_slide_style_cog+".item"+fs_loaded_app_calls_iff+"");   } 
 }, 
 acc: function (id, list){  initSidebar_accAdd(id, list);  initSidebar_acc();  },
