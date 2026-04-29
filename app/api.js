@@ -201,9 +201,9 @@ initSidebar(setup_slidef_objrc, list, theme, option.close);
 
 function fs_loaded_app_calls(){
 if (typeof callf === 'function') { callf({ active: function(id){ 
-	var fs_loaded_app_calls_iff=""+Number(id)+1;
-	if(Number(id)<=0){  fs_loaded_app_calls_iff="1";  }
- if(id){   initSidebar_oac(config_pp, setup_slide_style_cog+".item"+fs_loaded_app_calls_iff+"");   } 
+ if(id){ 	var fs_loaded_app_calls_iff=""+Number(id)+1;
+	if(id<=0 || Number(id)<=0){  fs_loaded_app_calls_iff="1";  }
+  initSidebar_oac(config_pp, setup_slide_style_cog+".item"+fs_loaded_app_calls_iff+"");   } 
 }, 
 acc: function (id, list){  initSidebar_accAdd(id, list);  initSidebar_acc();  },
 pos: function (pos = 'left'){  initSidebar_pos(setup_slidef_objrc, pos);  },
