@@ -200,7 +200,7 @@ initSidebar(setup_slidef_objrc, list, theme, option.close);
 
 function fs_loaded_app_calls(){
 if (typeof callf === 'function') { callf({ active: function(id){ 
- if(id){   initSidebar_oac(config_pp, setup_slide_style_cog+" .iten"+(Number(id)+1)+"");   } 
+ if(id){   initSidebar_oac(config_pp, setup_slide_style_cog+" ."+(Number(id)+1)+"");   } 
 }, 
 acc: function (id, list){  initSidebar_accAdd(id, list);  initSidebar_acc();  },
 pos: function (pos = 'left'){  initSidebar_pos(setup_slidef_objrc, pos);  },
