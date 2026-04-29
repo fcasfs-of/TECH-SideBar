@@ -66,7 +66,7 @@ menuData.forEach(item => {
 const canClick = item.label && item.onClick; 
 const div = document.createElement('div'); 
 idex_itenf=idex_itenf+1;
-div.className = `nav-item ${idex_itenf} ${canClick ? 'is-clickable' : 'not-clickable'}`; 
+div.className = `nav-item item${idex_itenf} ${canClick ? 'is-clickable' : 'not-clickable'}`; 
 div.innerHTML = ` ${item.icon ? `<div class="item-icon">${item.icon}</div>` : ''} <div class="item-content"> <span class="item-title">${item.label}</span> ${item.desc ? `<span class="item-desc">${item.desc}</span>` : ''} </div> `; 
 if (canClick && div) { div.addEventListener('click', () => { item.onClick();  initSidebar_close(sidebar_obj, ott); }); } 
 nav.appendChild(div); }); 
@@ -174,7 +174,7 @@ return document.getElementById(aa[1]);   }, function(aa){  return document.getEl
 
 
 if(setup_slidef_objrc){ 
-var setup_slide_style_cog="#"+id+" .sidebar-nav .nav-item";  
+var setup_slide_style_cog=".sidebar-nav .nav-item";  
 
   var initSidebar_creater_closde='<button class="sidebar-close close-x"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path fill="#444" d="M15.1 3.1l-2.2-2.2-4.9 5-4.9-5-2.2 2.2 5 4.9-5 4.9 2.2 2.2 4.9-5 4.9 5 2.2-2.2-5-4.9z"></path></svg></button>';
 if(option.btn_close===false){   initSidebar_creater_closde="";   }  
@@ -200,7 +200,7 @@ initSidebar(setup_slidef_objrc, list, theme, option.close);
 
 function fs_loaded_app_calls(){
 if (typeof callf === 'function') { callf({ active: function(id){ 
- if(id){   initSidebar_oac(config_pp, setup_slide_style_cog+" ."+(Number(id)+1)+"");   } 
+ if(id){   initSidebar_oac(config_pp, setup_slide_style_cog+" .item"+(Number(id)+1)+"");   } 
 }, 
 acc: function (id, list){  initSidebar_accAdd(id, list);  initSidebar_acc();  },
 pos: function (pos = 'left'){  initSidebar_pos(setup_slidef_objrc, pos);  },
