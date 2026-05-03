@@ -71,7 +71,7 @@ const div = document.createElement('div');
 idex_itenf=idex_itenf+1;
 div.className = `nav-item item${idex_itenf} ${canClick ? 'is-clickable' : 'not-clickable'}`; 
 div.innerHTML = ` ${item.icon ? `<div class="item-icon">${item.icon}</div>` : ''} <div class="item-content"> <span class="item-title">${item.label}</span> ${item.desc ? `<span class="item-desc">${item.desc}</span>` : ''} </div> `; 
-if (canClick && div) { div.addEventListener('click', () => { initSidebar_close(sidebar_obj, ott);   item.onClick();   }); } 
+if (canClick && div) { div.addEventListener('click', () => {  item.onClick();  initSidebar_close(sidebar_obj, ott);    });  } 
 nav.appendChild(div); }); 
 } } 
 }
