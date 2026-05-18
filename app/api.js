@@ -7,8 +7,6 @@ if(document.getElementsByTagName("head")[0]){  document.getElementsByTagName("he
 
 
 
-function initSidebar_start(){
-
 const ModalFSOF = (() => {
     const activeModals = new Map();
     let zIndexCounter = 10000;
@@ -221,6 +219,10 @@ const ModalFSOF = (() => {
 })();
 	
 	
+
+
+function initSidebar_start(){
+
 function gerarIDSimples(tamanho = 8) {  return Math.random().toString(36).substring(2, 2 + tamanho);   }
 
  function initSidebar_check(gf, sidebar_obj, sidebar_obj2d, arr){    var initSidebar_checkdf;
@@ -449,11 +451,11 @@ if (option.run && option.run===true){   fs_loaded_app_calls();  initSidebar_open
 }
 
 
-if (typeof initSidebar_onload === 'function') {  initSidebar_onload(initSidebar_creater);		}  
+if (typeof initSidebar_onload === 'function') {  initSidebar_onload(initSidebar_creater, modal_fsof);		}  
 
 }
 
-function initSidebar_startEx(ff){  if (typeof ff === 'function') {  ff(initSidebar_creater);		}  }
+function initSidebar_startEx(ff){  if (typeof ff === 'function') {  ff(initSidebar_creater, modal_fsof);		}  }
 
 
 initSidebar_start();
