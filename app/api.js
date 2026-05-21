@@ -289,7 +289,7 @@ if(item.separate===true){
 div.className = `nav-item-separate`; 
 div.innerHTML = ``; 
 }
-if(item.separate===true){
+if(item.divider===true){
 div.className = `nav-item item${idex_itenf}`; 
 div.style.padding="6px";
 }
