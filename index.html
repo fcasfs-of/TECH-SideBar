@@ -61,7 +61,7 @@ function btnHomeRt_stare(btnHomeRt,lnf){
 		
   function initSidebar_onload(api){       if(api){
 
-api("this", "this", [
+api("this", "objInofs", [
    { label: '<button class="fbutton" id="btn_ptbr">Portugues</button> <br/><br/> <button class="fbutton" id="btn_en">English</button>', desc: '', icon: null, onClick: null }
  ], "Sidebar Navigation", '', 
 'light', 'fullscreen', function(apiz){
@@ -73,27 +73,25 @@ api("btn_ptbr", "this", [
 
    if(apid){
      //apid.active(0);
-	var modalGpt=apid.close;
 	   	   
       }
     }, { btn:"", icon:'',
 		 close: function(){  btnHomeRt_stare(btnHomeRt,"en");   },
-        open: function(){   if(typeof modalGen.close === 'function'){   modalGen.close();   }     btnHomeRt_stare(btnHomeRt,"pt");   }
+        open: function(){   btnHomeRt_stare(btnHomeRt,"pt");   }
 });
 
-api("btn_en", "this", [
+api("btn_en", "objInofs", [
    { label: 'Transform your website\'s browsing experience with our Sidebar Navigation web application, a fully customizable and intuitive solution. <br/> Supporting light and dark themes, you can adjust the look to perfectly match your brand identity. <br/> Furthermore, we offer multiple placement options: left sidebar, right sidebar, center, or full screen, ensuring flexibility for different layouts and needs. <br/> Easily configurable and compatible with various projects, our Sidebar is the ideal tool for creating modern, functional interfaces with a touch of personalization.', desc: '', icon: null, onClick: null }
  ], "Sidebar - English", '', 
 'dark', 'center', function(apid){
 
    if(apid){
      //apid.active(0);
-	   var modalGen=apid.close;
-
+	   
       }
     }, { btn:"", icon:'',
 		 close: function(){  btnHomeRt_stare(btnHomeRt,"en");   },
-        open: function(){    if(typeof modalGpt.close === 'function'){   modalGpt.close();   }      btnHomeRt_stare(btnHomeRt,"en");   }
+        open: function(){     btnHomeRt_stare(btnHomeRt,"en");   }
 });
 
 
@@ -176,6 +174,8 @@ injetarScriptHome(false);
 
 	
 <script src="https://fcasfs-of.cloud-fs.net/TECH-SideBar/app/api.js"></script>
-  
+
+	<div id="objInofs"></div>
+	
 </body>
 </html>
