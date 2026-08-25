@@ -61,12 +61,12 @@ function btnHomeRt_stare(btnHomeRt,lnf){
 		
   function initSidebar_onload(api){       if(api){
 
-api("this", "objInofs", [
+api("this", "this", [
    { label: '<button class="fbutton" id="btn_ptbr">Portugues</button> <br/><br/> <button class="fbutton" id="btn_en">English</button>', desc: '', icon: null, onClick: null }
  ], "Sidebar Navigation", '', 
 'light', 'fullscreen', function(apiz){
 
-api("btn_ptbr", "this", [
+api("btn_ptbr", "objInofs", [
    { label: 'Transforme a experiência de navegação do seu site com nosso aplicativo web de Sidebar Navigation, uma solução totalmente personalizável e intuitiva. <br/> Com suporte a temas claros e escuros, você pode ajustar o visual para combinar perfeitamente com sua identidade visual. <br/> Além disso, oferecemos múltiplas opções de posicionamento: lateral esquerda, direita, centro ou em tela cheia, garantindo flexibilidade para diferentes layouts e necessidades. <br/> Facilmente configurável e compatível com diversos projetos, nosso Sidebar é a ferramenta ideal para criar interfaces modernas, funcionais e com um toque de personalização.', desc: '', icon: null, onClick: null }
  ], "Sidebar - Portugues", '', 
 'dark', 'center', function(apid){
