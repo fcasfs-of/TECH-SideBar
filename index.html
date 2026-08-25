@@ -48,6 +48,7 @@
 <br/><br/>
 
 	<script>
+var btnHomeRt;
 
 function btnHomeRt_stare(btnHomeRt,lnf){
   if (lnf){ 	   if(typeof btnHomeRt.atualizar === 'function'){  
@@ -71,9 +72,7 @@ api("btn_ptbr", "this", [
 
    if(apid){
      //apid.active(0);
-	   
-	   btnHomeRt_stare(btnHomeRt,"pt"); 
-	   
+	   	   
       }
     }, { btn:"", icon:'',
 		 close: function(){  btnHomeRt_stare(btnHomeRt,"en");   },
@@ -87,8 +86,6 @@ api("btn_en", "this", [
 
    if(apid){
      //apid.active(0);
-
-	   btnHomeRt_stare(btnHomeRt,"en"); 
 	   
       }
     }, { btn:"", icon:'',
@@ -130,8 +127,6 @@ if (typeof carregamentoGlobal === 'function'){ 	carregamentoGlobal('show', {
 });   }
 
 
-
-var btnHomeRt;
 
 if (typeof criarMenuRetorno === 'function'){ 	
  var criarMenuRetorno_on=cokk_plu_idf;
