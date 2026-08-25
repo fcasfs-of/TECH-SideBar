@@ -49,7 +49,6 @@
 
 	<script>
 var btnHomeRt;
-var modalGpt;  var modalGen;
 
 
 function btnHomeRt_stare(btnHomeRt,lnf){
@@ -74,7 +73,7 @@ api("btn_ptbr", "this", [
 
    if(apid){
      //apid.active(0);
-	   modalGpt=apid.close;
+	var modalGpt=apid.close;
 	   	   
       }
     }, { btn:"", icon:'',
@@ -89,7 +88,7 @@ api("btn_en", "this", [
 
    if(apid){
      //apid.active(0);
-	   modalGen=apid.close;
+	   var modalGen=apid.close;
 
       }
     }, { btn:"", icon:'',
