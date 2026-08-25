@@ -49,6 +49,8 @@
 
 	<script>
 var btnHomeRt;
+var modalGpt;  var modalGen;
+
 
 function btnHomeRt_stare(btnHomeRt,lnf){
   if (lnf){ 	   if(typeof btnHomeRt.atualizar === 'function'){  
@@ -65,7 +67,7 @@ api("this", "this", [
  ], "Sidebar Navigation", '', 
 'light', 'fullscreen', function(apiz){
 
-api("btn_ptbr", "this", [
+modalGpt=api("btn_ptbr", "this", [
    { label: 'Transforme a experiência de navegação do seu site com nosso aplicativo web de Sidebar Navigation, uma solução totalmente personalizável e intuitiva. <br/> Com suporte a temas claros e escuros, você pode ajustar o visual para combinar perfeitamente com sua identidade visual. <br/> Além disso, oferecemos múltiplas opções de posicionamento: lateral esquerda, direita, centro ou em tela cheia, garantindo flexibilidade para diferentes layouts e necessidades. <br/> Facilmente configurável e compatível com diversos projetos, nosso Sidebar é a ferramenta ideal para criar interfaces modernas, funcionais e com um toque de personalização.', desc: '', icon: null, onClick: null }
  ], "Sidebar - Portugues", '', 
 'dark', 'center', function(apid){
@@ -76,10 +78,10 @@ api("btn_ptbr", "this", [
       }
     }, { btn:"", icon:'',
 		 close: function(){  btnHomeRt_stare(btnHomeRt,"en");   },
-        open: function(){    btnHomeRt_stare(btnHomeRt,"pt");   }
+        open: function(){   if(typeof modalGen.close === 'function'){   modalGen.close();   }     btnHomeRt_stare(btnHomeRt,"pt");   }
 });
 
-api("btn_en", "this", [
+modalGen=api("btn_en", "this", [
    { label: 'Transform your website\'s browsing experience with our Sidebar Navigation web application, a fully customizable and intuitive solution. <br/> Supporting light and dark themes, you can adjust the look to perfectly match your brand identity. <br/> Furthermore, we offer multiple placement options: left sidebar, right sidebar, center, or full screen, ensuring flexibility for different layouts and needs. <br/> Easily configurable and compatible with various projects, our Sidebar is the ideal tool for creating modern, functional interfaces with a touch of personalization.', desc: '', icon: null, onClick: null }
  ], "Sidebar - English", '', 
 'dark', 'center', function(apid){
@@ -90,7 +92,7 @@ api("btn_en", "this", [
       }
     }, { btn:"", icon:'',
 		 close: function(){  btnHomeRt_stare(btnHomeRt,"en");   },
-        open: function(){    btnHomeRt_stare(btnHomeRt,"en");   }
+        open: function(){    if(typeof modalGpt.close === 'function'){   modalGpt.close();   }      btnHomeRt_stare(btnHomeRt,"en");   }
 });
 
 
