@@ -48,6 +48,15 @@
 <br/><br/>
 
 	<script>
+
+function btnHomeRt_stare(btnHomeRt,lnf){
+  if (lnf){ 	   if(typeof btnHomeRt.atualizar === 'function'){  
+   var criarMenuReftorno_on=lnf;
+ if(criarMenuReftorno_on=="pt"){   criarMenuReftorno_on="";   }
+    btnHomeRt.atualizar({ idioma:lnf, urlPrincipal: 'https://fcasfs-of.cloud-fs.net/'+criarMenuReftorno_on });  }  }
+}
+
+		
   function initSidebar_onload(api){       if(api){
 
 api("this", "this", [
@@ -64,7 +73,9 @@ api("btn_ptbr", "this", [
      //apid.active(0);
 	   
       }
-    }, { btn:"", icon:''
+    }, { btn:"", icon:'',
+		 close: function(){  btnHomeRt_stare(btnHomeRt,"en");   },
+        open: function(){    btnHomeRt_stare(btnHomeRt,"pt");   }
 });
 
 api("btn_en", "this", [
@@ -76,7 +87,9 @@ api("btn_en", "this", [
      //apid.active(0);
 	   
       }
-    }, { btn:"", icon:''
+    }, { btn:"", icon:'',
+		 close: function(){  btnHomeRt_stare(btnHomeRt,"en");   },
+        open: function(){    btnHomeRt_stare(btnHomeRt,"en");   }
 });
 
 
@@ -113,11 +126,14 @@ if (typeof carregamentoGlobal === 'function'){ 	carregamentoGlobal('show', {
 });   }
 
 
+
+var btnHomeRt;
+
 if (typeof criarMenuRetorno === 'function'){ 	
  var criarMenuRetorno_on=cokk_plu_idf;
  if(criarMenuRetorno_on=="pt"){   criarMenuRetorno_on="";   }
  
-criarMenuRetorno({
+btnHomeRt= criarMenuRetorno({
     idioma: cokk_plu_idf,
     fixo: true, novaAba: false,
     posicao: 'top-center',
